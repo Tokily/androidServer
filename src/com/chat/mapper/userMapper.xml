@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chat.mapper.userMapper">
+<resultMap id="userMap" type="com.chat.bean.User">
+<id property="id" column="id"/>
+<result property="name" column="name"/>
+</resultMap>
+<select id="getUser" resultMap="userMap" parameterType="String">
+select * from user where name=#{key} or telephone=#{key} or email=#{key}
+</select>
+</mapper>
